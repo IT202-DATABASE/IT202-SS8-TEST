@@ -1,5 +1,4 @@
 CREATE DATABASE BookStoreDB;
-
 USE BookStoreDB;
 
 CREATE TABLE Category (
@@ -68,6 +67,9 @@ SELECT title, author_name, CASE
 WHEN status = 1 THEN 'Còn hàng'
 WHEN status = 0 THEN 'Hết hàng'
 END AS status_name
+FROM Book;
+
+SELECT UPPER(title) AS title_upper,YEAR(NOW()) - YEAR(publish_date) AS publish_year
 FROM Book;
 
 SELECT b.title, b.price, c.category_name
